@@ -8,7 +8,7 @@ if (!empty($_SESSION['validation_errors'])) {
     unset($_SESSION['validation_errors']);
 }
 
-$server_error = [];
+$server_error = '';
 
 if (!empty($_SESSION['server_error'])) {
     $server_error = $_SESSION['server_error'];
@@ -31,20 +31,16 @@ if (!empty($_SESSION['server_error'])) {
                     <h2><strong><?php echo APP_NAME; ?></strong></h2>
                 </div>
 
-                <form action="../private/index.php" method="post">
+                <form action="../private/processa_login.php" method="post">
 
                     <div class="mb-3">
                         <label class="form-label">Utilizador</label>
-                        <input type="email"
-                               class="form-control"
-                               name="text_username">
+                        <input type="email" class="form-control" name="text_username">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="password"
-                               class="form-control"
-                               name="text_password">
+                        <input type="password" class="form-control" name="text_password">
                     </div>
 
                     <div class="mb-3 text-center">
