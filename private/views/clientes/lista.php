@@ -138,28 +138,22 @@ try {
 
                                         <td class="text-center">
 
-                                            <a href="detalhes.php?id_cliente=<?= $cliente->id ?>"
+                                            <a href="detalhes.php?id_cliente=<?= aes_encrypt($cliente->id) ?>"
                                                 class="btn btn-sm btn-outline-primary me-1"
-                                                title="Consultar">
-
+                                                title="Consulta de dados de Cliente">
                                                 <i class="fa-solid fa-eye"></i>
-
                                             </a>
 
                                             <a href="editar.php?id_cliente=<?= aes_encrypt($cliente->id) ?>"
                                                 class="btn btn-sm btn-outline-warning me-1"
                                                 title="Editar">
-
                                                 <i class="fa-solid fa-pen-to-square"></i>
-
                                             </a>
 
-                                            <a href="apagar.php?id_cliente=<?= $cliente->id ?>"
+                                            <a href="apagar.php?id_cliente=<?= aes_encrypt($cliente->id) ?>"
                                                 class="btn btn-sm btn-outline-danger"
                                                 title="Eliminar">
-
                                                 <i class="fa-solid fa-trash-can"></i>
-
                                             </a>
 
                                         </td>
