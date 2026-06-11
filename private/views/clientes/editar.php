@@ -20,6 +20,56 @@ if (!$idClient || !is_numeric($idClient)) {
 
 $erro = '';
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $nome = trim($_POST['nome_cliente'] ?? '');
+    $morada = trim($_POST['morada_cliente'] ?? '');
+    $cidade = trim($_POST['cid_cliente'] ?? '');
+    $telefone = trim($_POST['tel_cliente'] ?? '');
+    $email = trim($_POST['email_cliente'] ?? '');
+    $sexo = trim($_POST['radio_gender'] ?? '');
+    $dnasc = trim($_POST['dnasc_cliente'] ?? '');
+    $sistema = trim($_POST['campo_opcao'] ?? '');
+
+    if (empty($nome)) {
+        $erro = "O nome não pode estar vazio.";
+    } else {
+        try {
+            $stmt = $pdo->prepare("
+                UPDATE clientes
+                SET
+                    nome = :nome,
+                    sexo = :sexo,
+                    data_nascimento = :dnasc,
+                    email = :email,
+                    telefone = :telefone,
+                    morada = :morada,
+                    cidade = :cidade,
+                    sistema_saude = :sistema
+                WHERE id = :id
+            ");
+
+            $stmt->execute([
+                ':nome' => $nome,
+                ':sexo' => $sexo,
+                ':dnasc' => $dnasc,
+                ':email' => $email,
+                ':telefone' => $telefone,
+                ':morada' => $morada,
+                ':cidade' => $cidade,
+                ':sistema' => $sistema,
+                ':id' => $idClient
+            ]);
+
+            header('Location: lista.php');
+            exit;
+
+        } catch (PDOException $err) {
+            $erro = "Erro ao atualizar os dados: " . $err->getMessage();
+        }
+    }
+}
+
 try {
     $stmt = $pdo->prepare("SELECT * FROM clientes WHERE id = :id");
     $stmt->execute([
