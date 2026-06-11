@@ -9,11 +9,11 @@ require_once __DIR__ . '/../../config/config.php';
 
     <title><?php echo APP_NAME; ?></title>
 
-    <link rel="shortcut icon" href="/isep-ginasio/private/assets/img/gym125.png" type="image/png">
+    <link rel="shortcut icon" href="/Ficha%2009/private/assets/img/gym125.png" type="image/png">
 
-    <link rel="stylesheet" href="/isep-ginasio/private/assets/css/admin.css">
-    <link rel="stylesheet" href="/isep-ginasio/private/assets/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/isep-ginasio/private/assets/fontawesome/all.min.css">
+    <link rel="stylesheet" href="/Ficha%2009/private/assets/css/admin.css">
+    <link rel="stylesheet" href="/Ficha%2009/private/assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/Ficha%2009/private/assets/fontawesome/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

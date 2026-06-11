@@ -1,8 +1,8 @@
 <header class="container-fluid bg-dark text-white">
     <div class="row align-items-center">
         <div class="col-6 d-flex align-items-center p-3">
-            <a href="/isep-ginasio/private/index.php">
-                <img alt="Logo do ISEP Ginásio" height="40" src="/isep-ginasio/private/assets/img/gym125_white.png" class="me-3" />
+            <a href="/Ficha%2009/private/index.php">
+                <img alt="Logo do ISEP Ginásio" height="40" src="/Ficha%2009/private/assets/img/gym125_white.png" class="me-3" />
             </a>
             <h3 class="mb-0"><?php echo APP_NAME; ?></h3>
         </div>
