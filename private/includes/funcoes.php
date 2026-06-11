@@ -45,3 +45,31 @@ function validar_login($username, $password)
 
     return 0;
 }
+
+// ============================================================
+// Encriptação e desencriptação de valores com OpenSSL
+// ============================================================
+
+function aes_encrypt($value) {
+    return bin2hex(openssl_encrypt(
+        $value,
+        OPENSSL_METHOD,
+        OPENSSL_KEY,
+        OPENSSL_RAW_DATA,
+        OPENSSL_IV
+    ));
+}
+
+function aes_decrypt($value) {
+    if (!is_string($value) || strlen($value) % 2 !== 0) {
+        return false;
+    }
+
+    return openssl_decrypt(
+        hex2bin($value),
+        OPENSSL_METHOD,
+        OPENSSL_KEY,
+        OPENSSL_RAW_DATA,
+        OPENSSL_IV
+    );
+}

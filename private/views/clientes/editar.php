@@ -9,9 +9,10 @@ if (!in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'])) {
     exit;
 }
 
-$idClient = $_GET['id_cliente'] ?? null;
+$idClientEncrypted = $_GET['id_cliente'] ?? null;
+$idClient = aes_decrypt($idClientEncrypted);
 
-if (!$idClient) {
+if (!$idClient || !is_numeric($idClient)) {
     header('Location: lista.php');
     exit;
 }
@@ -30,7 +31,8 @@ if (!$idClient) {
             <h2>Editar Cliente</h2>
 
             <div class="alert alert-info">
-                ID recebido: <?= htmlspecialchars($idClient) ?>
+                ID encriptado recebido: <?= htmlspecialchars($idClientEncrypted) ?><br>
+                ID desencriptado: <?= htmlspecialchars($idClient) ?>
             </div>
 
             <a href="lista.php" class="btn btn-secondary">

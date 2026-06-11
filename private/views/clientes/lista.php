@@ -12,13 +12,11 @@ try {
     $resultados = $pdo->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
     $erro = '';
-
 } catch (PDOException $e) {
 
     $resultados = [];
 
     $erro = "Aconteceu um erro na ligação.";
-
 }
 
 ?>
@@ -68,7 +66,7 @@ try {
                     <div class="table-responsive">
 
                         <table id="tabela-clientes"
-                               class="table table-bordered table-striped align-middle">
+                            class="table table-bordered table-striped align-middle">
 
                             <thead class="table-dark">
                                 <tr>
@@ -99,15 +97,12 @@ try {
                                             if (($cliente->sexo ?? '') == 'f') {
 
                                                 echo 'Feminino';
-
                                             } elseif (($cliente->sexo ?? '') == 'm') {
 
                                                 echo 'Masculino';
-
                                             } else {
 
                                                 echo htmlspecialchars($cliente->sexo ?? '');
-
                                             }
 
                                             ?>
@@ -134,8 +129,8 @@ try {
                                             <?= htmlspecialchars(
                                                 trim(
                                                     ($cliente->morada ?? '') .
-                                                    ' - ' .
-                                                    ($cliente->cidade ?? ''),
+                                                        ' - ' .
+                                                        ($cliente->cidade ?? ''),
                                                     ' - '
                                                 )
                                             ) ?>
@@ -144,24 +139,24 @@ try {
                                         <td class="text-center">
 
                                             <a href="detalhes.php?id_cliente=<?= $cliente->id ?>"
-                                               class="btn btn-sm btn-outline-primary me-1"
-                                               title="Consultar">
+                                                class="btn btn-sm btn-outline-primary me-1"
+                                                title="Consultar">
 
                                                 <i class="fa-solid fa-eye"></i>
 
                                             </a>
 
-                                            <a href="editar.php?id_cliente=<?= $cliente->id ?>"
-                                               class="btn btn-sm btn-outline-warning me-1"
-                                               title="Editar">
+                                            <a href="editar.php?id_cliente=<?= aes_encrypt($cliente->id) ?>"
+                                                class="btn btn-sm btn-outline-warning me-1"
+                                                title="Editar">
 
                                                 <i class="fa-solid fa-pen-to-square"></i>
 
                                             </a>
 
                                             <a href="apagar.php?id_cliente=<?= $cliente->id ?>"
-                                               class="btn btn-sm btn-outline-danger"
-                                               title="Eliminar">
+                                                class="btn btn-sm btn-outline-danger"
+                                                title="Eliminar">
 
                                                 <i class="fa-solid fa-trash-can"></i>
 

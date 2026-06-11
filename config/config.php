@@ -13,3 +13,8 @@ define('DB_PORT', '3306');
 define('DB_NAME', 'isep-ginasio');
 define('DB_USER', 'root');
 define('DB_PASS', '');
+
+// Segurança - Encriptação com OpenSSL
+define('OPENSSL_METHOD', 'AES-256-CBC');
+define('OPENSSL_KEY', 'H0SDRQzIGqclX2kbYBk9xspdn9U5f3Wa');
+define('OPENSSL_IV', 'BzKAbjuREsHgnw56');
