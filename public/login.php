@@ -31,7 +31,7 @@ if (!empty($_SESSION['server_error'])) {
                     <h2><strong><?php echo APP_NAME; ?></strong></h2>
                 </div>
 
-                <form action="../private/processa_login.php" method="post">
+                <form name="formulario" action="../private/processa_login.php" method="post">
 
                     <div class="mb-3">
                         <label class="form-label">Utilizador</label>
@@ -50,8 +50,19 @@ if (!empty($_SESSION['server_error'])) {
                         </button>
                     </div>
 
+                    <!-- Botões de preenchimento automático (Fase de Testes) -->
+                    <div class="mt-2 text-center">
+                        <button type="button" id="preencher_adm" class="btn btn-outline-primary btn-sm me-2">
+                            Preencher Admin
+                        </button>
+
+                        <button type="button" id="preencher_agent" class="btn btn-outline-secondary btn-sm">
+                            Preencher Agente
+                        </button>
+                    </div>
+
                     <?php if (!empty($validation_errors)) : ?>
-                        <div class="alert alert-danger p-2 text-center">
+                        <div class="alert alert-danger p-2 text-center mt-3">
                             <?php foreach ($validation_errors as $error) : ?>
                                 <div><?= htmlspecialchars($error) ?></div>
                             <?php endforeach; ?>
@@ -59,7 +70,7 @@ if (!empty($_SESSION['server_error'])) {
                     <?php endif; ?>
 
                     <?php if (!empty($server_error)) : ?>
-                        <div class="alert alert-danger p-2 text-center">
+                        <div class="alert alert-danger p-2 text-center mt-3">
                             <div><?= htmlspecialchars($server_error) ?></div>
                         </div>
                     <?php endif; ?>
@@ -70,5 +81,19 @@ if (!empty($_SESSION['server_error'])) {
         </div>
     </div>
 </div>
+
+<script>
+document.querySelector("#preencher_adm").addEventListener("click", () => {
+    const formulario = document.forms["formulario"];
+    formulario["text_username"].value = "admin@isep.pt";
+    formulario["text_password"].value = "$2y$10$aia";
+});
+
+document.querySelector("#preencher_agent").addEventListener("click", () => {
+    const formulario = document.forms["formulario"];
+    formulario["text_username"].value = "agente1@isep.pt";
+    formulario["text_password"].value = "$2y$10$O";
+});
+</script>
 
 <?php include '../private/includes/footer.php'; ?>
