@@ -19,25 +19,29 @@
 
                 </div>
 
-                <form>
+                <form action="../private/index.php" method="post">
 
                     <div class="mb-3">
-                        <label class="form-label">Utilizador</label>
+                        <label class="form-label">
+                            Utilizador
+                        </label>
 
                         <input type="email"
                                class="form-control"
-                               id="">
+                               name="text_username">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Password</label>
+                        <label class="form-label">
+                            Password
+                        </label>
 
                         <input type="password"
                                class="form-control"
-                               id="">
+                               name="text_password">
                     </div>
 
-                    <div class="mb-3 text-center">
+                    <div class="text-center">
 
                         <button type="submit"
                                 class="btn btn-secondary px-4">
@@ -47,14 +51,6 @@
                             <i class="fa-solid fa-right-to-bracket ms-2"></i>
 
                         </button>
-
-                    </div>
-
-                    <div>
-
-                        <div class="alert alert-danger p-2 text-center">
-                            Erro: Utilizador não registado
-                        </div>
 
                     </div>
 
