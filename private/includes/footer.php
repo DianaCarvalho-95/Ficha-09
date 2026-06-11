@@ -1,7 +1,11 @@
 <script src="/Ficha%2009/private/assets/bootstrap/bootstrap.bundle.min.js"></script>
+
 <script src="/Ficha%2009/private/assets/jQuery/jquery-3.6.0.min.js"></script>
+
 <script src="/Ficha%2009/private/assets/datatables/DataTables-1.13.1/js/jquery.dataTables.min.js"></script>
+
 <script src="/Ficha%2009/private/assets/datatables/DataTables-1.13.1/js/dataTables.bootstrap5.min.js"></script>
+
 <script src="/Ficha%2009/private/assets/flatpickr/flatpickr.js"></script>
 
 <script>
