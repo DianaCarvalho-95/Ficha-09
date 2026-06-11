@@ -6,14 +6,10 @@ require_once __DIR__ . '/../../includes/database.php';
 redirect_if_not_logged();
 
 try {
-
     $sql = "SELECT * FROM clientes";
-
     $resultados = $pdo->query($sql)->fetchAll();
-
     $erro = '';
 } catch (PDOException $e) {
-
     $resultados = [];
     $erro = "Aconteceu um erro na ligação.";
 }
@@ -40,8 +36,6 @@ try {
                 </a>
             </div>
 
-            <p class="text-muted">Lista de clientes registados.</p>
-
             <hr>
 
             <?php if (!empty($erro)) : ?>
@@ -57,7 +51,9 @@ try {
                 <?php else : ?>
 
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover align-middle">
+                        <table id="tabela-clientes"
+                               class="table table-bordered table-striped align-middle">
+
                             <thead class="table-dark">
                                 <tr>
                                     <th>Nome</th>
@@ -75,33 +71,38 @@ try {
                                     <tr>
                                         <td><?= htmlspecialchars($cliente->nome ?? '') ?></td>
                                         <td><?= htmlspecialchars($cliente->sexo ?? '') ?></td>
-                                        <td><?= htmlspecialchars($cliente->data_nascimento ?? '') ?></td>
+                                        <td>
+                                            <?= !empty($cliente->data_nascimento)
+                                                ? date('d/m/Y', strtotime($cliente->data_nascimento))
+                                                : '' ?>
+                                        </td>
                                         <td><?= htmlspecialchars($cliente->email ?? '') ?></td>
                                         <td><?= htmlspecialchars($cliente->telefone ?? '') ?></td>
                                         <td><?= htmlspecialchars($cliente->sistema_saude ?? '') ?></td>
 
                                         <td class="text-center">
                                             <a href="detalhes.php?id=<?= $cliente->id ?>"
-                                                class="btn btn-sm btn-outline-primary me-1"
-                                                title="Consultar">
+                                               class="btn btn-sm btn-outline-primary me-1"
+                                               title="Consultar">
                                                 <i class="fa-solid fa-eye"></i>
                                             </a>
 
                                             <a href="editar.php?id=<?= $cliente->id ?>"
-                                                class="btn btn-sm btn-outline-warning me-1"
-                                                title="Editar">
+                                               class="btn btn-sm btn-outline-warning me-1"
+                                               title="Editar">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
 
                                             <a href="apagar.php?id=<?= $cliente->id ?>"
-                                                class="btn btn-sm btn-outline-danger"
-                                                title="Eliminar">
+                                               class="btn btn-sm btn-outline-danger"
+                                               title="Eliminar">
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
+
                         </table>
                     </div>
 
