@@ -3,19 +3,15 @@
 
 <div class="container-fluid">
     <div class="row">
-
         <?php include '../../includes/sidebar.php'; ?>
 
-        <!-- Conteúdo Principal -->
         <main class="col-md-9 col-lg-10 p-4">
-
             <section>
                 <h2>Produtos e Serviços</h2>
                 <p>Consulte os produtos e serviços que o ginásio oferece.</p>
             </section>
 
             <div class="home-wrapper">
-
                 <div class="home-row">
 
                     <a href="calculoIMC.php" class="unlink">
@@ -65,11 +61,8 @@
                     </a>
 
                 </div>
-
             </div>
-
         </main>
-
     </div>
 </div>
 

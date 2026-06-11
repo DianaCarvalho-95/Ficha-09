@@ -3,12 +3,9 @@
 
 <div class="container-fluid">
     <div class="row">
-
         <?php include '../../includes/sidebar.php'; ?>
 
-        <!-- Conteúdo Principal -->
         <main class="col-md-9 col-lg-10 p-4">
-
             <section>
                 <h2 onmouseover="console.log('Bem-vindo ao Cálculo de IMC do ISEP')">
                     Cálculo de IMC
@@ -21,7 +18,6 @@
             </section>
 
             <div class="form-wrapper">
-
                 <h2>
                     <strong>
                         <i class="fa-solid fa-heart-pulse"></i>
@@ -32,7 +28,6 @@
                 <hr>
 
                 <form>
-
                     <div class="form-group">
                         <label for="peso">Peso (kg):</label>
                         <input type="number" id="peso" name="peso">
@@ -47,13 +42,9 @@
                         <label>Resultado:</label><br>
                         <span id="indicadorIMC"></span>
                     </div>
-
                 </form>
-
             </div>
-
         </main>
-
     </div>
 </div>
 
@@ -61,6 +52,6 @@
     console.log("Engenharia Biomédica");
 </script>
 
-<script src="/Ficha%2009/private/assets/js/funcoes.js"></script>
+<script src="/Ficha%2009/private/includes/js/funcoes.js"></script>
 
 <?php include '../../includes/footer.php'; ?>

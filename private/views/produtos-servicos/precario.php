@@ -3,11 +3,9 @@
 
 <div class="container-fluid">
     <div class="row">
-
         <?php include '../../includes/sidebar.php'; ?>
 
         <main class="col-md-9 col-lg-10 p-4">
-
             <section>
                 <h2>Preçário Interativo</h2>
                 <p>Escolha o serviço e a frequência para ver o preço.</p>
@@ -45,12 +43,10 @@
 
                 <p id="resultadoAG" class="text-center"></p>
             </div>
-
         </main>
-
     </div>
 </div>
 
-<script src="/Ficha%2009/private/assets/js/funcoes.js"></script>
+<script src="/Ficha%2009/private/includes/js/funcoes.js"></script>
 
 <?php include '../../includes/footer.php'; ?>
